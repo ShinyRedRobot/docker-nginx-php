@@ -17,7 +17,8 @@ RUN rm -f /etc/nginx/conf.d/default.conf \
     && mkdir -p /var/www/html \
     && rm -rf /var/www/html/* \
     && echo "<?php echo 'Hello World'; ?>" > /var/www/html/index.php \
-    && chown -R www-data:www-data /var/www/html
+    && chown -R www-data:www-data /var/www/html \
+    && chmor -R 775 /var/www/html
 
 VOLUME /var/www/html
 
