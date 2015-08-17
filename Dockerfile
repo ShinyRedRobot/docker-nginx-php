@@ -11,7 +11,7 @@ RUN apt-get update \
         wget \
     && rm -rf /var/lib/apt/lists/* \
     && apt-get clean \
-    && apt-get autoclean \
+    && apt-get autoclean
 
 RUN rm -f /etc/nginx/conf.d/default.conf \
     && mkdir -p /var/www/html \
