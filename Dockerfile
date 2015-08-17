@@ -12,9 +12,11 @@ RUN apt-get update \
     && rm -rf /var/lib/apt/lists/* \
     && apt-get clean \
     && apt-get autoclean \
-    && rm -f /etc/nginx/conf.d/default.conf \
+
+RUN rm -f /etc/nginx/conf.d/default.conf \
+    && mkdir -p /var/www/html \
     && rm -rf /var/www/html/* \
-    && echo "<?php echo 'Hello World'; ?>" > /var/www/html/index.php
+    && echo "<?php echo 'Hello World'; ?>" > /var/www/html/index.php \
     && chown -R www-data:www-data /var/www/html
 
 VOLUME /var/www/html
